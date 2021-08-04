@@ -7,7 +7,7 @@ import NumeroAleatorio from './components/basics/UINumeroAleatorio'
 export default function App( props )
 {
     return (
-        <div>
+        <div id="app">
             <h1>Fundamentos React</h1>
             <NumeroAleatorio min={2} max={10} />
             <ComponenteParametrizado
