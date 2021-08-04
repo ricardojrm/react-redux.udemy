@@ -4,8 +4,7 @@
     flex-direction: column;
     margin: 10px;
     width: 300px;
-    background-color: red;
-    border: 3px solid red;
+    border: 3px solid;
     border-radius: 10px;
     overflow: hidden;
 }

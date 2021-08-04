@@ -12,10 +12,10 @@ export default function App( props )
         <div id="app">
             <h1>Fundamentos React</h1>
             <div id="cards">
-                <UICard titulo="Número Aleatório">
+                <UICard titulo="Número Aleatório" color="green">
                     <NumeroAleatorio min={2} max={10} />
                 </UICard>
-                <UICard titulo="Componente Parametrizado">
+                <UICard titulo="Componente Parametrizado" color="red">
                     <ComponenteParametrizado
                         titulo="Situação do aluno"
                         aluno="Pedro"
@@ -25,7 +25,7 @@ export default function App( props )
                         aluno="Maria"
                         nota={9.9} />
                 </UICard>
-                <UICard titulo="Componente Fragmentado">
+                <UICard titulo="Componente Fragmentado" color="yellow">
                     <ComponenteFragmentado />
                 </UICard>
                 <UICard titulo="Primeiro Componente">
