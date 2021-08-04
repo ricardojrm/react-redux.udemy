@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default function Primeiro()
+export default function PrimeiroComponente()
 {
     const msg = 'Este é o nosso primeiro componente!';
     return (

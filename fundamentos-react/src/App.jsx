@@ -1,5 +1,5 @@
 import React from 'react';
-import PrimeiroComponente from './components/basics/Primeiro'
+import PrimeiroComponente from './components/basics/PrimeiroComponente'
 import ComponenteParametrizado from './components/basics/ComponenteComParametros'
 import NumeroAleatorio from './components/basics/UINumeroAleatorio'
 
@@ -9,8 +9,6 @@ export default function App( props )
         <div>
             <h1>Fundamentos React</h1>
             <NumeroAleatorio min={2} max={10} />
-            <PrimeiroComponente></PrimeiroComponente>
-            <PrimeiroComponente/>
             <ComponenteParametrizado
                 titulo="Situação do aluno"
                 aluno="Pedro"
@@ -19,6 +17,8 @@ export default function App( props )
                 titulo="Situação do aluno"
                 aluno="Maria"
                 nota={9.9} />
+            <PrimeiroComponente />
+            <PrimeiroComponente></PrimeiroComponente>
         </div>
     );
 }
