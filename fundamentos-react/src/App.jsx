@@ -1,5 +1,6 @@
 import React from 'react';
 import PrimeiroComponente from './components/basics/PrimeiroComponente'
+import ComponenteFragmentado from './components/basics/ComponenteComFragmento'
 import ComponenteParametrizado from './components/basics/ComponenteComParametros'
 import NumeroAleatorio from './components/basics/UINumeroAleatorio'
 
@@ -17,7 +18,7 @@ export default function App( props )
                 titulo="Situação do aluno"
                 aluno="Maria"
                 nota={9.9} />
-            <PrimeiroComponente />
+            <ComponenteFragmentado />
             <PrimeiroComponente></PrimeiroComponente>
         </div>
     );
