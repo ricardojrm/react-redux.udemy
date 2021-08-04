@@ -5,6 +5,7 @@ import ComponenteFragmentado from './components/basics/ComponenteComFragmento'
 import ComponenteParametrizado from './components/basics/ComponenteComParametros'
 import NumeroAleatorio from './components/basics/UINumeroAleatorio'
 import UICard from './components/ui/UICard';
+import Familia from './components/basics/Familia'
 
 export default function App( props )
 {
@@ -12,6 +13,9 @@ export default function App( props )
         <div id="app">
             <h1>Fundamentos React</h1>
             <div id="cards">
+                <UICard titulo="Componente com Filhos" color="brown">
+                    <Familia sobrenome="Ferreira" />
+                </UICard>
                 <UICard titulo="Número Aleatório" color="green">
                     <NumeroAleatorio min={2} max={10} />
                 </UICard>
