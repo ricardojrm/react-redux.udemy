@@ -2,7 +2,6 @@ import React from 'react';
 
 export default function ComponenteComParametro( props )
 {
-    console.log( props );
     const nota = props.nota;
     const situacao = ( nota > 7 ) ? <strong>Aprovado</strong> : <React.Fragment>em <strong>Recuperação</strong></React.Fragment>
     return (
