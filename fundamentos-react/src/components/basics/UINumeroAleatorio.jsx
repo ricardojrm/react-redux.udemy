@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default function UINumeroAleatorio( {min, max} )
+export default function UINumeroAleatorio( {min=1, max=10} )
 {
     const aleatorio = Math.floor( Math.random() * (max - min + 1) + min );
 
