@@ -1,0 +1,10 @@
+ul.notas
+{
+    list-style: none;
+    text-align: left;
+}
+
+ul.notas li.aprovado
+{
+    color: green;
+}
