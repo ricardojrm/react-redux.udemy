@@ -1,0 +1,23 @@
+table.produtos
+{
+    width: 100%;
+    background-color: #777;
+}
+
+table.produtos tr.even
+{
+    background-color: lightgray;
+    color: #333;
+}
+
+table.produtos tr.odd
+{
+    background-color:gray;
+    color: white;
+}
+
+table.produtos tfoot td
+{
+    padding-left: 5px;
+    text-align: left;
+}

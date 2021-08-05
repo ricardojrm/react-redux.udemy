@@ -1,15 +1,21 @@
 import React from 'react';
 import produtos from '../../data/produtos';
+import './TabelaProduto.css';
 
 export default function TabelaProduto()
 {
-    const format = function( {id, nome, preco}, idx )
+    function adicionarLinha( {id, nome, preco}, idx )
     {
+        /* Determinando o estilo da linha conforme padrão par/ímpar. */
+        const styleClass = ( idx % 2 === 0 ) ? "even" : "odd";
+
         return (
-            <tr key={idx} id={"produto-"+idx}>
+            <tr key={idx}
+                id={"produto-"+idx}
+                className={styleClass}>
                 <td>{id}</td>
                 <td>{nome}</td>
-                <td>R$ {preco}</td>
+                <td>{preco.toLocaleString( 'pt-br', { style: 'currency', currency: 'BRL' })}</td>
             </tr>
         );
     };
@@ -18,15 +24,17 @@ export default function TabelaProduto()
         <table className="produtos">
             <thead>
                 <tr>
-                    <td>Código</td>
-                    <td>Nome</td>
-                    <td>Preço</td>
+                    <th>Código</th>
+                    <th>Nome</th>
+                    <th>Preço</th>
                 </tr>
             </thead>
-            {produtos.map( format )}
+            <tbody>
+                {produtos.map( adicionarLinha )}
+            </tbody>
             <tfoot>
                 <tr>
-                    <td colspan={3} style={{textAlign:"left"}}>Encontrado {produtos.length} produtos</td>
+                    <td colspan={3}>Encontrado {produtos.length} produtos</td>
                 </tr>
             </tfoot>
         </table>
