@@ -6,6 +6,7 @@ import ComponenteParametrizado from './components/basics/ComponenteComParametros
 import NumeroAleatorio from './components/basics/UINumeroAleatorio'
 import UICard from './components/ui/UICard';
 import Familia from './components/basics/Familia'
+import MembroFamilia from './components/basics/FamiliaMembro';
 
 export default function App( props )
 {
@@ -14,7 +15,11 @@ export default function App( props )
             <h1>Fundamentos React</h1>
             <div id="cards">
                 <UICard titulo="Componente com Filhos" color="brown">
-                    <Familia sobrenome="Ferreira" />
+                    <Familia sobrenome="Ramalho">
+                        <MembroFamilia nome="Pedro" />
+                        <MembroFamilia nome="Ana" />
+                        <MembroFamilia nome="Gustavo" />
+                    </Familia>
                 </UICard>
                 <UICard titulo="Número Aleatório" color="green">
                     <NumeroAleatorio min={2} max={10} />

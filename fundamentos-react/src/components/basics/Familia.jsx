@@ -1,13 +1,19 @@
 import React from 'react';
-import MembroFamilia from './FamiliaMembro';
 
-export default function Familia( {sobrenome} )
+export default function Familia( {sobrenome, children} )
 {
+    const doClone = function( child, idx )
+    {
+        return React.cloneElement( child, {sobrenome, key: idx} );
+    };
+
     return (
-        <div>
-            <MembroFamilia nome="Pedro" sobrenome={sobrenome} />
-            <MembroFamilia nome="Ana" {...arguments[0]} />
-            <MembroFamilia nome="Gustavo" />
-        </div>
+        <React.Fragment>
+            {
+                /* React.cloneElement( children, {sobrenome} ) */
+                /* React.Children.map( children, doClone ) */
+                children.map( doClone )
+            }
+        </React.Fragment>
     );
 }
