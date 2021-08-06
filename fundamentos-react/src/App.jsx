@@ -16,7 +16,7 @@ export default function App( props )
         <div id="app">
             <h1>Fundamentos React</h1>
             <div id="cards">
-            <UICard titulo="Desafio Repetição" color="lightblue">
+                <UICard titulo="Desafio Repetição" color="lightblue">
                     <Produtos />
                 </UICard>
                 <UICard titulo="Repetição" color="blue">
