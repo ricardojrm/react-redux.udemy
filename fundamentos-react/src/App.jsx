@@ -10,6 +10,7 @@ import MembroFamilia from './components/basics/FamiliaMembro';
 import ListaAlunos from './components/repeticao/ListaAlunos';
 import Produtos from './components/repeticao/TabelaProduto';
 import ParOuImpar from './components/condicional/ParOuImpar';
+import UsuarioInfo from './components/condicional/UsuarioInfo';
 
 export default function App( props )
 {
@@ -19,6 +20,9 @@ export default function App( props )
             <div id="cards">
                 <UICard titulo="Renderização Condicional" color="purple">
                     <ParOuImpar numero={3} />
+                    <UsuarioInfo usuario={{nome: "Fernando"}}/>
+                    <UsuarioInfo usuario={{email: "fer@nando.com"}}/>
+                    <UsuarioInfo />
                 </UICard>
                 <UICard titulo="Desafio Repetição" color="lightblue">
                     <Produtos />
