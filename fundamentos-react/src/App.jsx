@@ -11,6 +11,7 @@ import ListaAlunos from './components/repeticao/ListaAlunos';
 import Produtos from './components/repeticao/TabelaProduto';
 import ParOuImpar from './components/condicional/ParOuImpar';
 import UsuarioInfo from './components/condicional/UsuarioInfo';
+import DiretaPai from './components/comunicacao/DiretaPai';
 
 export default function App( props )
 {
@@ -18,6 +19,9 @@ export default function App( props )
         <div id="app">
             <h1>Fundamentos React</h1>
             <div id="cards">
+                <UICard titulo="Comunicação Direta" color="lightgreen">
+                    <DiretaPai />
+                </UICard>
                 <UICard titulo="Renderização Condicional" color="purple">
                     <ParOuImpar numero={3} />
                     <UsuarioInfo usuario={{nome: "Fernando"}}/>
