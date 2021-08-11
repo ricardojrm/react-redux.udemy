@@ -4,7 +4,6 @@ import alunos from '../../data/alunos';
 
 export default function ListaAlunos()
 {
-    console.log( alunos );
     const doConvert = function( aluno, idx )
     {
         const styleClass = (aluno.nota >= 7) ? "aprovado" : "reprovado";
