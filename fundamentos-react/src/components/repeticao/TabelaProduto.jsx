@@ -34,7 +34,7 @@ export default function TabelaProduto()
             </tbody>
             <tfoot>
                 <tr>
-                    <td colspan={3}>Encontrado {produtos.length} produtos</td>
+                    <td colSpan={3}>Encontrado {produtos.length} produtos</td>
                 </tr>
             </tfoot>
         </table>
