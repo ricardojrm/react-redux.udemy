@@ -14,6 +14,7 @@ import UsuarioInfo from './components/condicional/UsuarioInfo';
 import DiretaPai from './components/comunicacao/DiretaPai';
 import IndiretaPai from './components/comunicacao/IndiretaPai';
 import Input from './components/formulario/Input';
+import Contador from './components/contador/Contador';
 
 export default function App( props )
 {
@@ -21,6 +22,10 @@ export default function App( props )
         <div id="app">
             <h1>Fundamentos React</h1>
             <div id="cards">
+                <UICard titulo="Contador" color="#424242">
+                    <Contador />
+                    <Contador numeroInicial={10} passoInicial={5} />
+                </UICard>
                 <UICard titulo="Componente Controlado" color="gray">
                     <Input />
                 </UICard>
