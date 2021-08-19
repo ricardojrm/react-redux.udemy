@@ -32,7 +32,7 @@ export default function Mega( props )
 
     return (
         <div>
-            <div>{numeros.map( n => n + " " )}</div>
+            <div>{numeros.sort( ( n1, n2) => n1 - n2 ).map( n => n + " " )}</div>
             <button onClick={gerarSurpresinha}>Gerar Sequência</button>
         </div>
     );
