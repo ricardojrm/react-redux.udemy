@@ -14,21 +14,26 @@ export default function Mega( props )
         return parseInt( Math.random() * ( INTERVALO_LIMITE_SUPERIOR - INTERVALO_LIMITE_INFERIOR + 1 ) ) + INTERVALO_LIMITE_INFERIOR;
     }
 
-    function gerarSequencia( e )
+    function gerarSequencia( qtdSequencia )
     {
         let novaSequencia = new Map();
         do {
             let novoNumero = gerarProximoNumero();
             novaSequencia.set( novoNumero , true );
             // console.log( novoNumero , novaSequencia.size , novaSequencia.size< TOTAL_SEQUENCIA );
-        } while ( novaSequencia.size < QUANTIDADE_SEQUENCIA );
+        } while ( novaSequencia.size < qtdSequencia );
         setNumeros( [...novaSequencia.keys()] );
+    }
+
+    function gerarSurpresinha( e )
+    {
+        gerarSequencia( QUANTIDADE_SEQUENCIA );
     }
 
     return (
         <div>
             <div>{numeros.map( n => n + " " )}</div>
-            <button onClick={gerarSequencia}>Gerar Sequência</button>
+            <button onClick={gerarSurpresinha}>Gerar Sequência</button>
         </div>
     );
 }
