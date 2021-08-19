@@ -9,16 +9,16 @@ export default function Mega( props )
 
     const [numeros, setNumeros] = useState( Array( QUANTIDADE_SEQUENCIA ).fill( 0 ) );
 
-    function proximoNumero()
+    function gerarProximoNumero()
     {
-        return parseInt( Math.random() * ( INTERVALO_LIMITE_SUPERIOR - INTERVALO_LIMITE_INFERIOR ) ) + INTERVALO_LIMITE_INFERIOR;
+        return parseInt( Math.random() * ( INTERVALO_LIMITE_SUPERIOR - INTERVALO_LIMITE_INFERIOR + 1 ) ) + INTERVALO_LIMITE_INFERIOR;
     }
 
     function gerarSequencia( e )
     {
         let novaSequencia = new Map();
         do {
-            let novoNumero = proximoNumero();
+            let novoNumero = gerarProximoNumero();
             novaSequencia.set( novoNumero , true );
             // console.log( novoNumero , novaSequencia.size , novaSequencia.size< TOTAL_SEQUENCIA );
         } while ( novaSequencia.size < QUANTIDADE_SEQUENCIA );
