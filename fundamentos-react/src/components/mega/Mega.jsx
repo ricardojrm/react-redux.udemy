@@ -16,13 +16,15 @@ export default function Mega( props )
 
     function gerarSequencia( qtdSequencia )
     {
-        let novaSequencia = new Map();
+        let novaSequencia = [];
         do {
             let novoNumero = gerarProximoNumero();
-            novaSequencia.set( novoNumero , true );
-            // console.log( novoNumero , novaSequencia.size , novaSequencia.size< TOTAL_SEQUENCIA );
-        } while ( novaSequencia.size < qtdSequencia );
-        setNumeros( [...novaSequencia.keys()] );
+            if ( !novaSequencia.includes( novoNumero ) )
+            {
+                novaSequencia.push( novoNumero );
+            }
+        } while ( novaSequencia.length < qtdSequencia );
+        setNumeros( novaSequencia.sort( ( n1, n2) => n1 - n2 ) );
     }
 
     function gerarSurpresinha( e )
@@ -32,8 +34,9 @@ export default function Mega( props )
 
     return (
         <div>
-            <div>{numeros.sort( ( n1, n2) => n1 - n2 ).map( n => n + " " )}</div>
+            <div>{numeros.join( " " )}</div>
             <button onClick={gerarSurpresinha}>Gerar Sequência</button>
         </div>
     );
+
 }
