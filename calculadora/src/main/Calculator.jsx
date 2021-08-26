@@ -1,5 +1,6 @@
 import './Calculator.css';
 import React, { Component } from 'react';
+import Display from '../components/Display';
 import Button from '../components/Button';
 
 class Calculator extends Component
@@ -8,6 +9,7 @@ class Calculator extends Component
     {
         return (
             <div className="calculator">
+                <Display value={100} />
                 <Button label="AC" />
                 <Button label="/" />
                 <Button label="7" />
