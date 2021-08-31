@@ -21,16 +21,51 @@ class Calculator extends Component
         this.setState( {...this.initialState} );
     }
 
-    setOperation = ( n ) =>
+    setOperation = ( op ) =>
     {
-        console.log( n );
+        console.log( op );
+
+        let currentValue = this.state.displayValue;
+        let clearDisplay = true;
+        let operation = op;
+        let values = [...this.state.values];
+        let current = this.state.current;
+
+        // Se o poteiro ainda apontar para o primeiro dÃ­gito...
+        if ( current === 0 )
+        {
+            current = 1;
+        }
+        else
+        {
+            const beforeOperation = this.state.operation;
+            console.log( beforeOperation );
+            
+            if ( beforeOperation != null )
+            {
+                currentValue = eval( `${values[0]} ${beforeOperation} ${values[1]}` );
+                values[ 0 ] = currentValue;
+                values[ 1 ] = 0;
+            }
+            
+            // Se foi clicado no botÃ£o "="...
+            if ( operation === '=' )
+            {
+                operation = null;
+                current = 1;
+            }
+
+            console.log( values );
+        }
+
+        this.setState( {displayValue: currentValue, clearDisplay, operation, values, current} );
     }
 
     addDigit = ( n ) =>
     {
         console.log( n );
 
-        // Validação #1: Não podemos digitar mais de '.'
+        // ValidaÃ§Ã£o #1: NÃ£o podemos digitar mais de '.'
         if ( n === '.' 
                 && this.state.displayValue.includes( n ) )
         {
@@ -42,7 +77,7 @@ class Calculator extends Component
         const displayValue = currentValue + n;
         this.setState( {displayValue, clearDisplay: false} );
 
-        // Se o valor informado for um dígito...
+        // Se o valor informado for um dÃ­gito...
         if ( n !== "." )
         {
             const i = this.state.current;
